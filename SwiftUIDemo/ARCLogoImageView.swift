@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ARCLogoImageView: View {
     var body: some View {
-        Image("ARC_LOGO")
+        Image("turtlerock_thumb")
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 4.0))
             .shadow(radius: 5.0)

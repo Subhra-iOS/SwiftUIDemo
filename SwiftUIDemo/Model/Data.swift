@@ -1,5 +1,5 @@
 //
-//  LandmarkManager.swift
+//  Data.swift
 //  SwiftUIDemo
 //
 //  Created by Subhra Roy on 25/10/19.
@@ -66,5 +66,4 @@ final class ImageStore {
         return images.index(forKey: name)!
     }
 }
-
 

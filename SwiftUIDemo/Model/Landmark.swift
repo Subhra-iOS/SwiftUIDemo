@@ -9,12 +9,7 @@
 import SwiftUI
 import CoreLocation
 
-struct Coordinate : Hashable, Codable {
-    var longitude : Double
-    var latitude : Double
-}
-
-struct Landmark: Hashable, Codable {
+struct Landmark: Hashable, Codable, Identifiable {
     
     var id : Int
     var name : String
@@ -22,8 +17,8 @@ struct Landmark: Hashable, Codable {
     var city : String
     var state : String
     var park : String
-    private var imageName : String
-    private var coordinates : Coordinate
+    fileprivate var imageName : String
+    fileprivate var coordinates : Coordinate
     
     enum Category: String, CaseIterable, Codable, Hashable {
         case featured = "Featured"
@@ -41,6 +36,11 @@ extension Landmark{
     var image : Image {
         ImageStore.shared.image(name: imageName)
     }
+}
+
+struct Coordinate : Hashable, Codable {
+    var longitude : Double
+    var latitude : Double
 }
 
 

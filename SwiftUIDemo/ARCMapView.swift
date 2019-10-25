@@ -11,13 +11,15 @@ import MapKit
 
 struct ARCMapView: UIViewRepresentable {
     
+    var coordinate : CLLocationCoordinate2D
+    
     func makeUIView(context: Context) -> MKMapView {
            MKMapView(frame: .zero)
        }
 
        func updateUIView(_ view: MKMapView, context: Context) {
-           let coordinate = CLLocationCoordinate2D(
-               latitude: 22.5764753, longitude: 88.4306861)
+         /*  let coordinate = CLLocationCoordinate2D(
+               latitude: 22.5764753, longitude: 88.4306861)*/
            let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
            let region = MKCoordinateRegion(center: coordinate, span: span)
            view.setRegion(region, animated: true)
@@ -26,6 +28,6 @@ struct ARCMapView: UIViewRepresentable {
 
 struct ARCMapView_Previews: PreviewProvider {
     static var previews: some View {
-        ARCMapView()
+        ARCMapView(coordinate: landmarkData[0].locationCoordinate)
     }
 }

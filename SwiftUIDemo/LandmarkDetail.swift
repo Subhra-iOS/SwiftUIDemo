@@ -9,9 +9,12 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
+    
+    var landmark : Landmark
+    
     var body: some View {
         VStack {
-            ARCMapView()
+            ARCMapView(coordinate: landmark.locationCoordinate)
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
             ARCLogoImageView()
@@ -19,17 +22,17 @@ struct LandmarkDetail: View {
                 .padding(.bottom, -130)
             
             VStack(alignment: .center) {
-                Text("Animal Park")
+                Text(landmark.park)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                 HStack(alignment: .center) {
-                    Text("Salt Lake, Sector V")
+                    Text(landmark.park)
                         .font(.subheadline)
                         .foregroundColor(.gray)
                     Spacer()
-                    Text("Kolkata - 700091")
+                    Text(landmark.state)
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }.padding()
@@ -38,11 +41,12 @@ struct LandmarkDetail: View {
                 
             }
         }
+        .navigationBarTitle(Text(verbatim: landmark.name), displayMode: .inline)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetail()
+        LandmarkDetail(landmark: landmarkData[0])
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LandmarkDetail.swift
 //  SwiftUIDemo
 //
 //  Created by Subhra Roy on 24/10/19.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LandmarkDetail: View {
     var body: some View {
         VStack {
             ARCMapView()
@@ -19,7 +19,7 @@ struct ContentView: View {
                 .padding(.bottom, -130)
             
             VStack(alignment: .center) {
-                Text("Hello ARC Document")
+                Text("Animal Park")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.gray)
@@ -43,6 +43,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LandmarkDetail()
     }
 }

@@ -31,7 +31,7 @@ struct LandmarkDetail: View {
                     Text(landmark.park)
                         .font(.subheadline)
                         .foregroundColor(.gray)
-                    Spacer()
+                    Spacer(minLength: 10.0)
                     Text(landmark.state)
                         .font(.subheadline)
                         .foregroundColor(.gray)

@@ -15,9 +15,8 @@ struct LandmarkList: View {
                 NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
                     LandmarkRow(landmark: landmark)
                 }
-            }
+            } .navigationBarTitle("Landmarks")
         }
-        .navigationBarTitle("Landmarks")
     }
 }
 

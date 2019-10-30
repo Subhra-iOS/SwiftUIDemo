@@ -16,7 +16,8 @@ struct LandmarkList: View {
                     LandmarkRow(landmark: landmark)
                 }
             }
-        }.navigationBarTitle("Landmarks")
+        }
+        .navigationBarTitle("Landmarks")
     }
 }
 

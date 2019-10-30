@@ -2,24 +2,24 @@
 //  ARCLogoImageView.swift
 //  SwiftUIDemo
 //
-//  Created by Subhra Roy on 24/10/19.
+//  Created by Subhra Roy on 30/10/19.
 //  Copyright © 2019 Subhra Roy. All rights reserved.
 //
 
 import SwiftUI
 
 struct ARCLogoImageView: View {
+   var circleImage : Image
     var body: some View {
-        Image("turtlerock_thumb")
+        circleImage
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 4.0))
             .shadow(radius: 5.0)
     }
 }
 
-struct CompLogoImageView_Previews: PreviewProvider {
+struct ARCLogoImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ARCLogoImageView()
+        ARCLogoImageView(circleImage : Image("turtlerock"))
     }
 }
-

@@ -49,14 +49,16 @@ final class ImageStore {
     }
 
     static func loadImage(name: String) -> CGImage {
+
+        /*let url = Bundle.main.url(forResource: name, withExtension: "jpg"),
+        let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil),
+        let image = CGImageSourceCreateImageAtIndex(imageSource, 0, nil)*/
         guard
-            let url = Bundle.main.url(forResource: name, withExtension: "jpg"),
-            let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil),
-            let image = CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
+            let image : UIImage = UIImage(named: name)
         else {
             fatalError("Couldn't load image \(name).jpg from main bundle.")
         }
-        return image
+        return image.cgImage!
     }
     
     fileprivate func _guaranteeImage(name: String) -> _ImageDictionary.Index {

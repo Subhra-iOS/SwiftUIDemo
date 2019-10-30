@@ -17,7 +17,7 @@ struct LandmarkDetail: View {
             ARCMapView(coordinate: landmark.locationCoordinate)
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
-            ARCLogoImageView()
+            ARCLogoImageView(circleImage: landmark.image)
                 .offset(y : -130)
                 .padding(.bottom, -130)
             

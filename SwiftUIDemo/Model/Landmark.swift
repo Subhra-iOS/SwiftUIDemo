@@ -17,13 +17,16 @@ struct Landmark: Hashable, Codable, Identifiable {
     var city : String
     var state : String
     var park : String
+    var isFavorite : Bool
+    var isFeatured : Bool
     fileprivate var imageName : String
     fileprivate var coordinates : Coordinate
     
     enum Category: String, CaseIterable, Codable, Hashable {
-        case featured = "Featured"
+        //case featured = "Featured"
         case lakes = "Lakes"
         case rivers = "Rivers"
+        case mountains = "Mountains"
     }
     
     var locationCoordinate : CLLocationCoordinate2D{

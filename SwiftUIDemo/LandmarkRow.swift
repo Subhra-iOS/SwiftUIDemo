@@ -18,7 +18,12 @@ struct LandmarkRow: View {
                 .frame(width : 50 , height : 50)
             Text(verbatim: landmark.name)
                 .padding(EdgeInsets(top: 0.0, leading: 5.0, bottom: 0.0, trailing: 0.0))
-            Spacer(minLength: 10.0)
+            Spacer()
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .imageScale(.medium)
+                    .foregroundColor(Color.yellow)
+            }
         }
     }
 }

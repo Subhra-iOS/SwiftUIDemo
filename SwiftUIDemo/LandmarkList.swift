@@ -9,9 +9,12 @@
 import SwiftUI
 
 struct LandmarkList: View {
+    @State var showFavoriteOnly = false
+    
     var body: some View {
         NavigationView{
             List(landmarkData) { landmark in
+        
                 NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
                     LandmarkRow(landmark: landmark)
                 }

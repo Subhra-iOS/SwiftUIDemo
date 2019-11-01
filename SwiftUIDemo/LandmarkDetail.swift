@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
-    
+    @EnvironmentObject var userData: UserData
     var landmark : Landmark
     
     var body: some View {
